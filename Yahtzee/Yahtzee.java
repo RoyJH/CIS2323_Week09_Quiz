@@ -12,14 +12,26 @@ public class Yahtzee {
 	
 	public String toss(){
 		int dice1 = d1.roll();
-		int dice2 = d2.roll();
+		int dice2 = d2.roll();		
 		
 		if(dice1 == 6 && dice2 == 6){
-			return "YAHTZEE!";
+			return "12! YAHTZEE!";
 		} else {
 			String one = String.valueOf(dice1);
 			String two = String.valueOf(dice2);
 			return one + " " + two;
 		}
+	}
+	public String tossCheat() throws CheatException {
+			
+		int dice1 = d1.roll();
+		int dice2 = d2.roll();
+		//return "12! YAHTZEE!";
+		if(dice1 == 6 && dice2 == 6){
+			return "12! YAHTZEE!";
+		} else {
+			throw (new CheatException());
+		}
+		
 	}
 }
